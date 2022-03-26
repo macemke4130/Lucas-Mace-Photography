@@ -1,0 +1,29 @@
+.photoBlock {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 50vw 1fr;
+}
+
+.photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.photoDetails {
+    background-color: #121212;
+    color: #e0e0e0;
+    padding: 3rem;
+}
+
+.photoTitle {
+    text-align: right;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.photoDescription {
+    text-align: right;
+    font-size: 0.9rem;
+    width: 50%;
+}
