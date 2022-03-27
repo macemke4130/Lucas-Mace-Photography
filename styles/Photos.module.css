@@ -1,0 +1,12 @@
+.albumCard {
+    width: 25vw;
+    height: 15vw;
+    background-color: #666;
+    border-radius: 0.25rem;
+    margin: 0.5rem;
+}
+
+.albumTitle {
+    font-size: 1rem;
+    text-align: center;
+}

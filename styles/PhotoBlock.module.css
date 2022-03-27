@@ -13,7 +13,7 @@
 .photoDetails {
     background-color: #121212;
     color: #e0e0e0;
-    padding: 3rem;
+    padding: 5rem;
 }
 
 .photoTitle {
@@ -25,5 +25,4 @@
 .photoDescription {
     text-align: right;
     font-size: 0.9rem;
-    width: 50%;
 }
