@@ -1,4 +1,3 @@
-import { useState } from "React";
 import Image from "next/image";
 import styles from "../styles/Photos.module.css";
 
@@ -17,7 +16,7 @@ export default function Photos(props) {
                     <div key={album} className={styles.albumCard}>
                         <div className={styles.albumStack}>
                             {props?.allPhotos.map(photo => (
-                                <div className={styles.albumStackPhotoContainer}>
+                                <div key={photo.id} className={styles.albumStackPhotoContainer}>
                                     <img src={`./photos/${photo.filename}`} className={styles.albumStackPhoto} style={{ transform: `rotate(${skewMe()}deg)` }} />
                                 </div>
                             ))}
