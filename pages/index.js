@@ -3,12 +3,8 @@ import PhotoBlock from '../components/PhotoBlock';
 
 export default function Home() {
   return (
-    <>
-      <div className="centerCol">
-        <div className="centerRow">
-          <PhotoBlock />
-        </div>
-      </div>
-    </>
+    <main>
+      <PhotoBlock src="./photos/hero.jpg" title="Kenny in the Desert" description="Somewhere in Utah. Just after Sunrise on the Race Accross America 2021." />
+    </main>
   )
 }

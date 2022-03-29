@@ -1,12 +1,36 @@
 .albumCard {
+    position: relative;
     width: 25vw;
-    height: 15vw;
-    background-color: #666;
-    border-radius: 0.25rem;
-    margin: 0.5rem;
+    height: 20vw;
+    margin: 0 0.5rem 2rem 0;
 }
 
 .albumTitle {
-    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
     text-align: center;
+    text-shadow: 2px 2px 2px black;
+}
+
+.albumStack {
+    position: relative;
+    /* width: 100%; */
+}
+
+.albumStackPhotoContainer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.albumStackPhoto {
+    width: 10rem;
+    aspect-ratio: 1 /1;
+    object-fit: cover;
+    border: 1px solid #666;
+    transform: rotate(10deg);
 }

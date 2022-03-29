@@ -1,9 +1,5 @@
-import { photoData } from '../../../photoData.js';
-
-// export default function handler(req, res) {
-//     res.status(200).json(photoData);
-// }
+import { raamData } from '../../../photoData.js';
 
 export default function handler(req, res) {
-    res.status(200).json(photoData);
+    res.status(200).json(raamData);
 }

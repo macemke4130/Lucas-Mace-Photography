@@ -56,6 +56,9 @@ nav>* {
 
 main {
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   inset: auto 0 0 0;
   height: 95vh;
 }
