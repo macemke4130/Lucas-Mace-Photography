@@ -3,7 +3,7 @@ import styles from "../styles/Photos.module.css";
 
 export default function Photos(props) {
     const skewMe = () => {
-        const deg = 20;
+        const deg = 10;
         const min = deg * -1;
         const max = deg;
         return (Math.random() * (max - min) + min).toFixed(2);
@@ -11,17 +11,15 @@ export default function Photos(props) {
 
     if (props) {
         return (
-            <div className="flex">
-                {props?.allAlbums.map(album => (
+            <div className={styles.albumContainer}>
+                {props.allAlbums?.map((album, i) => (
                     <div key={album} className={styles.albumCard}>
                         <div className={styles.albumStack}>
-                            {props?.allPhotos.map(photo => (
-                                <div key={photo.id} className={styles.albumStackPhotoContainer}>
-                                    <img src={`./photos/${photo.filename}`} className={styles.albumStackPhoto} style={{ transform: `rotate(${skewMe()}deg)` }} />
-                                </div>
+                            {props?.allPhotos[i].map(photo => (
+                                <img key={photo.id} src={`./photos/${photo.filename}`} className={styles.albumStackPhoto} style={{ transform: `rotate(${skewMe()}deg)` }} />
                             ))}
+                            <h2 className={styles.albumTitle}>{album}</h2>
                         </div>
-                        <h2 className={styles.albumTitle}>{album}</h2>
                     </div>
                 ))}
             </div>
@@ -35,11 +33,19 @@ export default function Photos(props) {
 }
 
 export const getServerSideProps = async (context) => {
-    const r = await fetch("http://localhost:3000/api");
-    const allAlbums = await r.json();
+    const r = await fetch("http://localhost:3000/api/photos");
+    const rawJson = await r.json();
 
-    const x = await fetch("http://localhost:3000/api/photos");
-    const allPhotos = await x.json();
+    let allAlbums = [];
+    for (let i = 0; i < rawJson.length; i++) {
+        // Should be forEach?
+        allAlbums.push(rawJson[i].album);
+    }
+
+    let allPhotos = [];
+    for (let i = 0; i < rawJson.length; i++) {
+        allPhotos.push(rawJson[i].photos);
+    }
 
     return {
         props: { allAlbums, allPhotos }

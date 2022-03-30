@@ -1,36 +1,36 @@
-.albumCard {
-    position: relative;
-    width: 25vw;
-    height: 20vw;
-    margin: 0 0.5rem 2rem 0;
+.albumContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 3rem;
 }
 
-.albumTitle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5rem;
-    text-align: center;
-    text-shadow: 2px 2px 2px black;
+.albumCard {
+    display: flex;
+    justify-content: center;
+    width: 18rem;
+    margin-bottom: 4rem;
 }
 
 .albumStack {
-    position: relative;
-    /* width: 100%; */
-}
-
-.albumStackPhotoContainer {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
 }
 
 .albumStackPhoto {
-    width: 10rem;
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    width: 50%;
     aspect-ratio: 1 /1;
     object-fit: cover;
     border: 1px solid #666;
-    transform: rotate(10deg);
+}
+
+.albumTitle {
+    z-index: 2;
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
 }

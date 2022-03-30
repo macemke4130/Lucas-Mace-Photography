@@ -4,12 +4,11 @@ import styles from "../styles/Layout.module.css";
 
 const Layout = ({ children }) => {
     return (
-        <div>
+        <>
             <Head>
                 <title>Lucas Mace Photography</title>
             </Head>
             <header>
-
                 <nav>
                     <Link href="/"><h1>Lucas Mace Photography</h1></Link>
                     <Link href="/about">About</Link>
@@ -20,7 +19,7 @@ const Layout = ({ children }) => {
             <main>
                 {children}
             </main>
-        </div>
+        </>
     )
 }
 
